@@ -8,7 +8,7 @@ RUN apt-get install -y --force-yes curl git
 # install nodebrew
 RUN curl -L git.io/nodebrew | perl - setup
 ENV PATH $HOME/.nodebrew/current/bin:$PATH
-RUN echo 'export PATH=$HOME/.nodebrew/current/bin:$PATH' >> $HOME/.bashrc
+RUN echo 'export PATH=/.nodebrew/current/bin:$PATH' >> /root/.bashrc
 RUN nodebrew install-binary latest
 RUN nodebrew install-binary stable
 RUN nodebrew install-binary 0.8
